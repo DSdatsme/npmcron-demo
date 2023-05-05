@@ -1,0 +1,19 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: print-hi
+spec:
+  schedule: "* * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+            - name: print-hi
+              image: dsdatsme/nodecron
+              imagePullPolicy: Always
+              command:
+                - npm
+                - run
+                - hi-output
+          restartPolicy: OnFailure

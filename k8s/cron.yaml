@@ -1,0 +1,19 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: print-emoji
+spec:
+  schedule: "* * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+            - name: print-emoji
+              image: dsdatsme/nodecron
+              imagePullPolicy: Always
+              command:
+                - npm
+                - run
+                - emojies
+          restartPolicy: OnFailure

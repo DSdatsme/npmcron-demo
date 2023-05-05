@@ -1,0 +1,21 @@
+{
+  "name": "backendapp",
+  "version": "1.0.0",
+  "description": "basic backend app",
+  "main": "app.js",
+  "type": "module",
+  "scripts": {
+    "build": "tsc --build",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "runserver": "node --experimental-modules backend/app.js",
+    "emojies": "node backend/scripts/sleep-cron.js",
+    "hi-output": "node backend/scripts/hi-output.js"
+
+  },
+  "author": "dsdatsme",
+  "license": "ISC",
+  "dependencies": {
+    "node-emoji": "^1.11.0",
+    "random-emoji": "^1.0.2"
+  }
+}
